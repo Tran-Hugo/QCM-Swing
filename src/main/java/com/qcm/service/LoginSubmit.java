@@ -17,6 +17,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.qcm.model.User;
 import com.qcm.views.Header;
+import com.qcm.views.QcmView;
 
 public class LoginSubmit implements ActionListener {
     private JPanel form;
@@ -24,13 +25,15 @@ public class LoginSubmit implements ActionListener {
     private Header header;
     private String cardPage;
     private JLabel userLabel;
+    private JPanel mainWrapper;
 
-    public LoginSubmit(JPanel form, CardLayout cardLayout, Header header, String cardPage, JLabel userLabel){
+    public LoginSubmit(JPanel form, CardLayout cardLayout, Header header, String cardPage, JLabel userLabel, JPanel mainWrapper){
         this.form = form;
         this.cardLayout = cardLayout;
         this.header = header;
         this.cardPage = cardPage;
         this.userLabel = userLabel;
+        this.mainWrapper = mainWrapper;
     }
 
     @Override
@@ -57,6 +60,12 @@ public class LoginSubmit implements ActionListener {
             this.userLabel.setText(userId);
             this.cardLayout.show((JPanel) this.header, this.cardPage);
             this.header.setUserId(userId);
+
+            // JPanel body = new JPanel();
+            // body.setLayout(new CardLayout());
+            // body.add(qcmView);
+            QcmView qcmView = new QcmView();
+            this.mainWrapper.add(qcmView);
         } catch (IOException exception){
             exception.printStackTrace();
         } catch (InterruptedException exception) {

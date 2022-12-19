@@ -11,12 +11,12 @@ import com.qcm.service.LoginSubmit;
 
 public class Header extends JPanel {
     private String userId;
-    public Header(){
+    public Header(JPanel mainWrapper){
         // String user = "anis";
 
         CardLayout cardLayout = new CardLayout();
         setLayout(cardLayout);
-
+        setMaximumSize(new Dimension(this.getMaximumSize().width, 50));
         JPanel loginWrap = new JPanel();
         JButton login = new JButton("login");
         loginWrap.add(login);
@@ -40,7 +40,7 @@ public class Header extends JPanel {
         connecterPanel.add(connectedUser);
         add(connecterPanel, "2");
 
-        loginSubmit.addActionListener(new LoginSubmit(loginForm, cardLayout, this, "2", connectedUser));
+        loginSubmit.addActionListener(new LoginSubmit(loginForm, cardLayout, this, "2", connectedUser, mainWrapper));
 
         cardLayout.show(this, "0");
 

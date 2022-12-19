@@ -1,5 +1,7 @@
 package com.qcm.views;
 
+import java.awt.Color;
+
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,12 +18,8 @@ public class MainView extends JFrame {
         JPanel mainWrapper = new JPanel();
         mainWrapper.setLayout(new BoxLayout(mainWrapper, BoxLayout.Y_AXIS));
 
-        Header header = new Header();
-        header.getUserId();
+        Header header = new Header(mainWrapper);
         mainWrapper.add(header);
-        // assertEquals();
-        QcmView qcmView = new QcmView(header);
-        mainWrapper.add(qcmView);
         getContentPane().add(mainWrapper);
 
         setVisible(true);
