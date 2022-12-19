@@ -1,5 +1,7 @@
 package com.qcm;
 
+import com.qcm.views.MainView;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        new MainView();
     }
 }
