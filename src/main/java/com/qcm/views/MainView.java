@@ -7,8 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MainView extends JFrame {
+    private static MainView instance;
 
-    public MainView(){
+    private MainView(){
         setSize(800, 500);
         setLocationRelativeTo(null);
         // setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -23,5 +24,13 @@ public class MainView extends JFrame {
         getContentPane().add(mainWrapper);
 
         setVisible(true);
+    }
+    public static MainView createApp(){
+        if (instance == null) {
+            instance = new MainView();
+            return instance;
+        } else {
+            return instance;
+        }
     }
 }
