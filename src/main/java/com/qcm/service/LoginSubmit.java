@@ -64,7 +64,7 @@ public class LoginSubmit implements ActionListener {
             // JPanel body = new JPanel();
             // body.setLayout(new CardLayout());
             // body.add(qcmView);
-            QcmView qcmView = new QcmView();
+            QcmView qcmView = new QcmView(user.getId());
             this.mainWrapper.add(qcmView);
         } catch (IOException exception){
             exception.printStackTrace();
