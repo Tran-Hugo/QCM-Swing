@@ -48,9 +48,9 @@ public class GetQcm implements ActionListener {
                 );
                 questions.add(question);
             }
-            System.out.println(questions);
             this.qcm.setAllQuestions(questions);
 
+            this.qcm.setQcmId(this.id);
             this.qcm.qcmQuestion(questions.get(0), this.cardLayout);
         } catch (IOException exception){
             exception.printStackTrace();
